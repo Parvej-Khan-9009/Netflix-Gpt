@@ -12,7 +12,7 @@ function ContentLoadingShimmerUi() {
       </div>
 
       <div className="w-full grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 xs:gap-2 gap-4">
-        {Array(6).fill("").map((_, index) => (                                         //.fill("") se 6 item create ho rahe he empty string ke, taaki array ko traverse kiya ja sake,fill("") nahi karenge to undefined tems ki array ban jaegi.
+        {Array(6).fill("").map((_, index) => (       
             <div
               key={index}
               className="lg:h-[125px] lg:w-full md:h-[130px] xs:h-[100px] xs:w-full h-[140px] w-[96px] bg-gray-600 animate-pulse rounded-lg"
