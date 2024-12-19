@@ -20,9 +20,6 @@ function GptSearch() {
 
     return () => {
       sessionStorage.setItem("sessionSearchTxtForHearderSearch", searchText);
-      // sessionStorage.setItem("sessionSearchTxtForSearchPage", searchText);
-      // sessionStorage.setItem("sessionAiSearchResult", JSON.stringify(aiSearchResult));
-      // sessionStorage.setItem("sessionTmdbResultData", JSON.stringify(tmdbMovieResultOfAi));
       dispatch(hideSearchBar());
     };
   }, []);
