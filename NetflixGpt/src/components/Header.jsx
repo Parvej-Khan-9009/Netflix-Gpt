@@ -7,7 +7,6 @@ import { addUser, removeUser } from "../utils/userSlice";
 import { useNavigate, Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { IoSearch } from "react-icons/io5";
-// import myOpenai from "../utils/openAi";
 import HeaderSearchInputBox from "./HeaderSearchInputBox";
 
 function Header() {
