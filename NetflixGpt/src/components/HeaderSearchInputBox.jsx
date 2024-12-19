@@ -3,13 +3,11 @@ import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addAiSearchResult, addSearchText, addTmdbMovieResultOfAi, setDefaultUi, setLoadUi, setNoResult } from "../utils/gptSearchSlice";
 import { IoSearch } from "react-icons/io5";
-// import { HfInference } from "@huggingface/inference";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 function HeaderSearchInputBox() {
   const searchInput = useRef(null);
   const dispatch = useDispatch()
-  // const client = new HfInference("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");
   const [inputText, setInputText] = useState("");
   const sessionSearchTextRecord  = sessionStorage.getItem("sessionSearchTxtForHearderSearch");
 
@@ -75,24 +73,12 @@ function HeaderSearchInputBox() {
       searchInput.current.value +
       ".as result only give me up to 10 movies or series name whith their exact release year and separate each movie with coma like example: Padosan (1968), Angoor (1982), Money Heist (2017), Chashme Buddoor (1981) . note:-if the query only asks for the name of a specific movie or series,then provide then provide that as well And if no result related to the query is found then return a message as result that 'no data found'. please give me result exact like example.";
 
-    // const chatCompletion = await client.chatCompletion({
-    //   model: "Qwen/Qwen2.5-72B-Instruct",
-    //   messages: [
-    //     {
-    //       role: "user",
-    //       content: gptQuery,
-    //     },
-    //   ],
-    //   max_tokens: 300,
-    // });
-
     const chatCompletion = await chatSession.sendMessage(gptQuery);
     const gptResult = chatCompletion.response.text()
     
     const filteredGptResult = gptResult?.split(",").map((item) => item.trim());
 
     console.log(filteredGptResult);
-    
     dispatch(addAiSearchResult(filteredGptResult));
   }
 
