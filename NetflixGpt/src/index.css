@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: white;
+  background-color: #23252d;
+}
+
+.no-scrollBar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollBar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (min-width: 1024px) {
+  .gredient_header {
+    background: linear-gradient(to top, rgb(255, 255, 255, 0) 0%, rgb(0, 0, 0));
+  }
+}
+
+.gredient_video {
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255, 0) 60%,
+    rgba(0, 0, 0)
+  );
+}
+
+.gredient_Moviecard {
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255, 0) 60%,
+    rgb(0, 0, 0, 0.7)
+  );
+}
+
+.text-shadow {
+  text-shadow: 0px -1px 5px rgb(0, 0, 0);
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-clamp: 2; /* Number Of Lines */
+  -webkit-line-clamp: 2; /* Number Of Lines */
+}
