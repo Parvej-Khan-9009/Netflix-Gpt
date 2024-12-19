@@ -11,7 +11,6 @@ function PopulorSeries() {
   }, []);
 
   if (!data) return null;
-// https://api.themoviedb.org/3/trending/tv/day?language=en-US
   async function getPopulorSeries() {
     const res = await fetch(
       "https://api.themoviedb.org/3/trending/tv/day?language=en-US",
